@@ -1,0 +1,856 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A variant of the famous "Space Invaders" built using processing language.">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
+    
+    
+      
+        <title>Space Invader - ENSSAT Projects</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.21aed14c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="orange">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="ENSSAT Projects" class="md-header-nav__button md-logo" aria-label="ENSSAT Projects">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            ENSSAT Projects
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Space Invader
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+        
+      
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Java
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../images-recognition/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../3d-engine/" class="md-tabs__link">
+        C++
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../bluetooth-trafic-light/" class="md-tabs__link">
+        Arduino
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ENSSAT Projects" class="md-nav__button md-logo" aria-label="ENSSAT Projects">
+      
+  <img src="../../favicon.ico" alt="logo">
+
+    </a>
+    ENSSAT Projects
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    <label class="md-nav__link" for="nav-1">
+      Java
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Java" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Space Invader
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Space Invader
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preview" class="md-nav__link">
+    Preview
+  </a>
+  
+    <nav class="md-nav" aria-label="Preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theme-frog" class="md-nav__link">
+    Theme frog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theme-space" class="md-nav__link">
+    Theme space
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-theme" class="md-nav__link">
+    Create your own theme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../candy-crush/" class="md-nav__link">
+      Candy Crush
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    <label class="md-nav__link" for="nav-2">
+      Python
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Python" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../images-recognition/" class="md-nav__link">
+      Images recognition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data-mining/" class="md-nav__link">
+      Data mining
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../leave-management/" class="md-nav__link">
+      Leave management app.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../calcroad-trafic-simulator/" class="md-nav__link">
+      Simulateur de trafic routier
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sortify-playlists-management/" class="md-nav__link">
+      App, Gestion de playlists
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    <label class="md-nav__link" for="nav-3">
+      C++
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="C++" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3d-engine/" class="md-nav__link">
+      3D engine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../opengl-game/" class="md-nav__link">
+      OpenGL game
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    <label class="md-nav__link" for="nav-4">
+      Arduino
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Arduino" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Arduino
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bluetooth-trafic-light/" class="md-nav__link">
+      Bluetooth trafic light
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preview" class="md-nav__link">
+    Preview
+  </a>
+  
+    <nav class="md-nav" aria-label="Preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theme-frog" class="md-nav__link">
+    Theme frog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theme-space" class="md-nav__link">
+    Theme space
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-theme" class="md-nav__link">
+    Create your own theme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+
+<style>
+    .md-content header{
+        padding: 1.5em 3em;
+        background-image: linear-gradient(120deg, rgb(93, 64, 55), rgb(50, 25, 17));
+    }
+    .md-content header>h1,
+    .md-content header>h2 {
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: rgba(255,255,255,0.8) !important;
+        margin-block-end: 0 !important;
+        margin-block-start: 0 !important;
+    }
+
+    .md-content main>h2{
+        margin: 0 !important;
+    }
+
+    .md-content {
+        max-width: 100%
+    }
+
+    .md-content main hr{
+        display: none;
+    }
+
+    .md-content{
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #606c71;
+        font-size: 0.8rem;
+    }
+
+    .md-content .md-nav__title{
+        font-size: 1.5625em;
+        margin-block-start: 0.83em;
+    }
+
+    .md-content header>h1 {
+        font-size: 3.25rem !important;
+        font-weight: bold !important;
+        margin-block-end: 0.2em !important;
+    }
+
+    .md-content header>h2{
+        font-weight: normal !important;
+        font-size: 1.15rem !important;
+    }
+</style>
+
+<header style="">
+    
+    <h1 style="display: flex; justify-content: center; align-items: center;">
+        
+        <img src="/assets/space-invaders/favicon.svg" style="margin-right: 0.5em; max-width: 1.5em">
+        
+        Space Invader
+    </h1>
+    
+
+    
+    <h2 style="text-align: center;" style="margin-top: 0">
+        A variant of the famous "Space Invaders" built using processing language.
+    </h2>
+    
+</header>
+
+
+<nav>
+    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preview" class="md-nav__link">
+    Preview
+  </a>
+  
+    <nav class="md-nav" aria-label="Preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theme-frog" class="md-nav__link">
+    Theme frog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theme-space" class="md-nav__link">
+    Theme space
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-own-theme" class="md-nav__link">
+    Create your own theme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+</nav>
+
+
+<main>
+    <hr />
+<h2 id="preview">Preview</h2>
+<p>For now the game is <strong>available in 2 flavors</strong>. </p>
+<h3 id="theme-frog">Theme frog</h3>
+<p><em>In this first theme, you are a frog trying to eat flies.</em></p>
+<p><img alt="preview_theme_frog" src="/assets/space-invaders/preview_theme_frog.png" /></p>
+<h3 id="theme-space">Theme space</h3>
+<p><em>This second theme is closer to the original space invader design...</em></p>
+<p><img alt="preview_theme_space" src="/assets/space-invaders/preview_theme_space.png" /></p>
+<h2 id="installation">Installation</h2>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows</label><div class="tabbed-content">
+<ol>
+<li><a href="https://github.com/ENSSAT/space-invader/releases/">Download</a> the latest version for windows.</li>
+<li>Extract content of the zip where you want to install it.</li>
+<li>(optional) Right click on <code>space_invaders.exe</code> and create a desktop shortcut.</li>
+<li>To play, double click on <code>space_invaders.exe</code> or previously created shortcut.</li>
+</ol>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Linux</label><div class="tabbed-content">
+<ol>
+<li><a href="https://github.com/ENSSAT/space-invader/releases/">Download</a> the latest version for linux.</li>
+<li>Extract content of the zip where you want to install it.</li>
+<li>To play, run <code>./space_invaders</code> in your terminal</li>
+</ol>
+</div>
+</div>
+<h2 id="customization">Customization</h2>
+<h3 id="create-your-own-theme">Create your own theme</h3>
+<p>You can easily create your own by copying one of the theme folder and editing the sprites and settings inside.</p>
+</main>
+
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="../candy-crush/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Candy Crush
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
