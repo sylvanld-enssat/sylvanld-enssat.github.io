@@ -1,2 +1,35 @@
 site_name: ENSSAT Projects
-theme: material
+theme:
+  name: material
+  custom_dir: theme
+
+  logo: favicon.ico
+  favicon: favicon.ico
+
+  palette:
+    primary: black
+    accent: orange
+
+  features:
+    - navigation.tabs
+
+
+markdown_extensions:
+  - pymdownx.tabbed
+
+
+nav:
+  - Java:
+    - Space Invader: projects/space-invader.md
+    - Candy Crush: projects/candy-crush.md
+  - Python:
+    - Images recognition: projects/images-recognition.md
+    - Data mining: projects/data-mining.md
+    - Leave management app.: projects/leave-management.md
+    - Simulateur de trafic routier: projects/calcroad-trafic-simulator.md
+    - App, Gestion de playlists: projects/sortify-playlists-management.md
+  - C++:
+    - 3D engine: projects/3d-engine.md
+    - OpenGL game: projects/opengl-game.md
+  - Arduino:
+    - Bluetooth trafic light: projects/bluetooth-trafic-light.md

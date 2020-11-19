@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% set gradient_left = page.meta.gradient_left or 'blue' %}
+{% set gradient_right = page.meta.gradient_right or 'green' %}
+{% set header_color = page.meta.header_color or 'rgba(255,255,255,0.8)' %}
+
+{% block content %}
+
+{% if page and page.meta %}
+<style>
+    .md-content header{
+        padding: 1.5em 3em;
+        background-image: linear-gradient(120deg, {{gradient_left}}, {{gradient_right}});
+    }
+    .md-content header>h1,
+    .md-content header>h2 {
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: {{header_color}} !important;
+        margin-block-end: 0 !important;
+        margin-block-start: 0 !important;
+    }
+
+    .md-content main>h2{
+        margin: 0 !important;
+    }
+
+    .md-content {
+        max-width: 100%
+    }
+
+    .md-content main hr{
+        display: none;
+    }
+
+    .md-content{
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #606c71;
+        font-size: 0.8rem;
+    }
+
+    .md-content .md-nav__title{
+        font-size: 1.5625em;
+        margin-block-start: 0.83em;
+    }
+
+    .md-content header>h1 {
+        font-size: 3.25rem !important;
+        font-weight: bold !important;
+        margin-block-end: 0.2em !important;
+    }
+
+    .md-content header>h2{
+        font-weight: normal !important;
+        font-size: 1.15rem !important;
+    }
+</style>
+
+<header style="">
+    {% if page and page.title %}
+    <h1 style="display: flex; justify-content: center; align-items: center;">
+        {% if page.meta and page.meta.icon %}
+        <img src="{{page.meta.icon}}" style="margin-right: 0.5em; max-width: 1.5em">
+        {% endif %}
+        {{page.title}}
+    </h1>
+    {% endif %}
+
+    {% if page.meta.description %}
+    <h2 style="text-align: center;" style="margin-top: 0">
+        {{page.meta.description}}
+    </h2>
+    {% endif %}
+</header>
+
+{% if page.toc %}
+<nav>
+    {% include "partials/toc.html" %}
+</nav>
+{% endif %}
+
+<main>
+    {{ page.content }}
+</main>
+{% endif %}
+
+{% endblock %}
+
