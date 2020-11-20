@@ -1,0 +1,39 @@
+{% set title = page and page.title %}
+{% set description = page and page.frontmatter.description %}
+{% set buttons = page and page.frontmatter and page.frontmatter.buttons or [] %}
+{% set logo = page and page.frontmatter and page.frontmatter.logo or None %}
+
+<style>
+    #index-banner {
+        box-shadow: 0 0 0.2rem rgba(0, 0, 0, .1), 0 0.2rem 0.4rem rgba(0, 0, 0, .2);
+    }
+</style>
+
+<div class="section" id="index-banner">
+    <div class="container">
+
+        <a href="#" data-target="slide-out" class="btn top-nav sidenav-trigger full hide-on-large-only"><i
+                class="material-icons">menu</i></a>
+
+        <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m11 offset-m1 xl10 offset-xl1 center-on-small-only">
+                <h1 class="header" style="margin-top: 0;">
+                    {{title}}
+
+                    {% if logo %}
+                    <img src="/assets/space-invaders/favicon.svg">
+                    {% endif %}
+                </h1>
+                <h4 class="light">{{description}}</h4>
+
+                <hr style="margin: 1em 0">
+
+                {% if buttons %}
+                {% for button in buttons %}
+                <a href="{{button.link}}" class="waves-effect waves-light btn-large">{{button.name}}</a>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

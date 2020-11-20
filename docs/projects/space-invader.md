@@ -1,8 +1,13 @@
-template: project.html
+---
+
+title: Space Invaders
 icon: /assets/space-invaders/favicon.svg
-description: A variant of the famous "Space Invaders" built using processing language.
-gradient_left: rgb(93, 64, 55)
-gradient_right: rgb(50, 25, 17)
+description: Variant of the famous game written in Processing language.
+buttons:
+    - name: Downloads
+      link: https://github.com/sylvanld-enssat/space-invader/releases
+    - name: View on GitHub
+      link: https://github.com/sylvanld-enssat/space-invader
 
 ---
 

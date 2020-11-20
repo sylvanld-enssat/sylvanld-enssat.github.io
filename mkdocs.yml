@@ -1,6 +1,6 @@
 site_name: ENSSAT Projects
 theme:
-  name: material
+  name: null
   custom_dir: theme
 
   logo: favicon.ico
@@ -16,7 +16,11 @@ theme:
 
 markdown_extensions:
   - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.superfences
 
+plugins:
+  - frontmatter:
 
 nav:
   - Java:
@@ -25,8 +29,7 @@ nav:
   - Python:
     - Images recognition: projects/images-recognition.md
     - Data mining: projects/data-mining.md
-    - Leave management app.: projects/leave-management.md
-    - Simulateur de trafic routier: projects/calcroad-trafic-simulator.md
+    - Simulateur de trafic: projects/calcroad-trafic-simulator.md
     - App, Gestion de playlists: projects/sortify-playlists-management.md
   - C++:
     - 3D engine: projects/3d-engine.md
