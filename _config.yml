@@ -38,7 +38,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-theme: theme
+theme: jekyll-theme-projects
 plugins:
   - jekyll-relative-links
 
