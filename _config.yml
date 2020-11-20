@@ -37,7 +37,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sylvanld-enssat.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
-theme: jekyll-theme-projects # used locally
-#remote_theme: sylvanld/jekyll-theme-projects # used on github-pages
+#theme: jekyll-theme-projects # used locally
+remote_theme: sylvanld/jekyll-theme-projects # used on github-pages
 plugins:
   - jekyll-relative-links
