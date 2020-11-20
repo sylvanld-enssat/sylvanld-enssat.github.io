@@ -2,20 +2,6 @@
 
 layout: project
 
-title: Space Invaders
-sections: [1a, python]
-
-buttons: 
-    - title: Source
-      icon: fab fa-github
-      link: https://github.com/sylvanld-enssat/space-invader
-    - title: Downloads
-      icon: fa fa-download
-      link: https://github.com/sylvanld-enssat/space-invader/releases
-    - title: Features
-      icon: fa fa-list-ul
-      link: "#features"
-
 ---
 
 ## Table of contents
