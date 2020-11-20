@@ -1,1 +1,0 @@
-"Compare Jekyll to Mkdocs" 
