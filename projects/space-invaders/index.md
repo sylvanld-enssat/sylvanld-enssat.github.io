@@ -35,13 +35,13 @@ For now the game is **available in 2 flavors**.
 
 *In this first theme, you are a frog trying to eat flies.*
 
-![](./img/preview_theme_frog.png)
+![preview_theme_frog](./img/preview_theme_frog.png)
 
 ### Theme space
 
 *This second theme is closer to the original space invader design...*
 
-![](./img/preview_theme_space.png)
+![preview_theme_space](./img/preview_theme_space.png)
 
 ### Create your own theme
 
