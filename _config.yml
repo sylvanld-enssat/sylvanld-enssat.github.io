@@ -1,5 +1,6 @@
 
 title: Sylvan LE DEUNFF
+logo: /assets/logo_enssat.png
 subtitle: Projets 2017-2020
 email: sledeunf@gmail.com
 author: Sylvan LE DEUNFF
@@ -13,8 +14,11 @@ url: "https://sylvanld-enssat.github.io/" # the base hostname & protocol for you
 
 sidenav:
   items:
-    - title: Looking for something ?
-      link: wikipedia.org
+    - title: Biographie
+      link: /
+
+    - title: Tous les projets
+      section: projects
 
     - title: Projets par année
       items:

@@ -3,7 +3,7 @@
 layout: project
 
 title: CalcRoad
-sections: [3a, python, javascript]
+sections: [3a, python, javascript, projects]
 
 ---
 

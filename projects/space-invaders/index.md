@@ -4,7 +4,7 @@ layout: project
 
 title: Space Invaders
 description: My own version of Space Invader developed in "Processing"
-sections: [perso, java]
+sections: [perso, java, projects]
 
 buttons: 
     - title: Source
