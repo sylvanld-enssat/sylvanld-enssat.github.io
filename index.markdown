@@ -1,6 +1,12 @@
 ---
 
 layout: project
+title: Welcome on Board!
+description: This is my Scholar Project's showcase
+palette:
+  header:
+    color: white
+    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(2,0,36,1) 100%)
 
 ---
 

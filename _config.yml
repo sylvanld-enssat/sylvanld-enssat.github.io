@@ -1,40 +1,43 @@
 # Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 
-sections:
-  1a: ENSSAT 1ère année
-  2a: ENSSAT 2ème année
-  3a: ENSSAT 3ème année
-  perso: Projets perso
 
-  python: Python
-  java: Java
 
-title: Scholar projects
+
+title: Sylvan LE DEUNFF
+subtitle: Projets 2017-2020
 email: sledeunf@gmail.com
 author: Sylvan LE DEUNFF
+
 description: >- # this means to ignore newlines until "baseurl:"
   Showcase site presenting some projects that I developed 
   during my studies at the enssat (engineering school)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sylvanld-enssat.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+sidenav:
+  items:
+    - title: Looking for something ?
+      link: wikipedia.org
+
+    - title: Projets par année
+      items:
+        - title: 1ère année
+          section: 1a
+        - title: 2ème année
+          section: 2a
+        - title: 3ème année
+          section: 3a
+
+    - title: Projets par langage
+      items:
+        - title: Python
+          section: python
+        - title: Typescript
+          section: javascript
+        - title: Java
+          section: java
+
 
 # Build settings
 #theme: jekyll-theme-projects # used locally
