@@ -16,17 +16,6 @@ buttons:
 
 ---
 
-## Table of contents
-
-- [Table of contents](#table-of-contents)
-- [Preview](#preview)
-  - [Theme frog](#theme-frog)
-  - [Theme space](#theme-space)
-  - [Create your own theme](#create-your-own-theme)
-- [Installation](#installation)
-  - [Windows](#windows)
-  - [Linux](#linux)
-
 ## Preview
 
 For now the game is **available in 2 flavors**. 
