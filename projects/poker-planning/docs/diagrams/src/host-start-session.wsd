@@ -1,0 +1,10 @@
+@startuml
+
+title Un hôte lance une session
+
+participant Host
+collections Clients
+
+Host-->Clients: [broadcast] SESSION_REPLY(session)
+
+@enduml

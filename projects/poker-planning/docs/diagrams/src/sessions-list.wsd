@@ -1,0 +1,12 @@
+@startuml
+
+title Un client demande la liste des sessions disponibles
+
+participant Client
+collections Hosts
+
+Client->Hosts: [broadcast] SESSION_REQUEST
+Client<--Hosts: [broadcast] SESSION_REPLY(session)
+Client<--Hosts: [broadcast] SESSION_REPLY(session)
+
+@enduml

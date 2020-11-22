@@ -1,0 +1,17 @@
+@startuml
+
+title Un client rejoint une session de PokerPlanning
+
+participant Client
+participant Host
+
+Client->Host: [TCP] JOIN_SESSION_REQUEST(user)
+alt si un vote est en cours pour cette session
+Host-->Client: [TCP] JOIN_SESSION_REPLY(session)
+else Le client demande a recevoir le vote courant
+Client->Host: [TCP] FEATURE_VOTE_UPDATE
+Host-->Client: [TCP] FEATURE_VOTE_REQUEST(session)
+
+end
+
+@enduml

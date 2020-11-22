@@ -1,0 +1,44 @@
+
+title: Projets scolaires
+logo:
+  url: /assets/profile.jpg
+  class: circle
+  style: "width: 10rem"
+
+subtitle: Projets 2017-2020
+email: sledeunf@gmail.com
+author: Sylvan LE DEUNFF
+
+description: >- # this means to ignore newlines until "baseurl:"
+  Showcase site presenting some projects that I developed 
+  during my studies at the enssat (engineering school)
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sylvanld-enssat.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# define section available in sidenav
+sidenav:
+  items:
+    - title: Qui suis-je?
+      link: /
+
+    - title: Tous les projets
+      section: projects
+
+    - title: Projets par année
+      items:
+        - title: 1ère année
+          section: 1a
+        - title: 2ème année
+          section: 2a
+        - title: 3ème année
+          section: 3a
+
+    - title: Projets par langage
+      items:
+        - title: Python
+          section: python
+        - title: Typescript
+          section: javascript
+        - title: Java
+          section: java

@@ -1,0 +1,33 @@
+
+{% for item in include.items %}
+<li>
+    {% if item.items or item.section %}
+    <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+        {{item.title}}
+    </a>
+    <div class="collapsible-body">
+        <ul class="collapsible collapsible-accordion">
+            <!-- Display child items the same way-->
+            {% if item.items %}
+            {% include sidenav-items.html items=item.items %}
+            {% endif %}
+
+            <!-- If current item is a section, display projects with this tag {{item.section}} -->
+            {% if item.section %}
+            {% for node in site.pages %}
+            {% if node.sections contains item.section %}
+            <li>
+                <a href="{{node.url}}">{{node.title}}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+    {% else %}
+    <a href="{{item.link}}">
+        {{item.title}}
+    </a>
+    {% endif %}
+</li>
+{% endfor %}

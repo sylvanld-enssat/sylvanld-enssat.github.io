@@ -1,0 +1,10 @@
+@startuml
+
+title Les votes pour une feature sont clôs, l'hote publie les résultats
+
+participant Host
+collections Clients
+
+Host->Clients: [broadcast] PUBLISH_VOTE_RESULTS(feature)
+
+@enduml

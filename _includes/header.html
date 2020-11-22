@@ -1,0 +1,50 @@
+{% assign title = page.title %}
+{% assign description = page.description %}
+{% assign buttons = page.buttons || [] %}
+{% assign logo = page.logo %}
+
+<!-- determine header background -->
+{% assign color = page.palette.header.color %}
+{% assign background = page.palette.header.background %}
+
+<style>
+    #banner {
+        background-position: center;
+        background-size: cover !important;
+        box-shadow: 0 0 0.2rem rgba(0, 0, 0, .1), 0 0.2rem 0.4rem rgba(0, 0, 0, .2);
+    }
+</style>
+
+<div class="section" id="banner" style="color: {{color}}; background: {{background}}">
+    <div class="container">
+
+        <a href="#" data-target="slide-out" class="btn top-nav sidenav-trigger full hide-on-large-only"><i
+                class="material-icons">menu</i></a>
+
+        <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m11 offset-m1 xl10 offset-xl1 center-on-small-only">
+                <h1 class="header" style="margin-top: 0;">
+                    {{page.title}}
+
+                    {% if page.logo %}
+                    <img src="{{page.logo}}">
+                    {% endif %}
+                </h1>
+                {% if page.description %}
+                <h4 class="light">{{page.description}}</h4>
+                {% endif %}
+
+                {% if buttons %}
+                <hr style="margin: 1em 0">
+
+                {% for button in buttons %}
+                <a href="{{button.link}}" class="waves-effect waves-light btn-large">
+                    <i class="{{button.icon}} right"></i>
+                    {{button.title}}
+                </a>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

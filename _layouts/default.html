@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Google's materials icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fontawesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!-- Color highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pygments-rouge-css@0.1.0/friendly.css">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .highlighter-rouge>.highlight {
+            background-color: rgba(0, 0, 0, 0.04);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    {% include sidenav.html %}
+
+    {{content}}
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

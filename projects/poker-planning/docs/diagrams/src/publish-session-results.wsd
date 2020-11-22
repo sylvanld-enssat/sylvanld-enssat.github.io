@@ -1,0 +1,10 @@
+@startuml
+
+title La session est terminée, l'hote publie le résumé des votes
+
+participant Host
+collections Clients
+
+Host->Clients: [broadcast] PUBLISH_SESSION_RESULTS(session)
+
+@enduml

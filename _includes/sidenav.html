@@ -1,0 +1,120 @@
+<style>
+    body {
+        padding-left: 300px !important;
+    }
+
+    @media only screen and (max-width : 992px) {
+        body {
+            padding-left: 0 ! important;
+        }
+    }
+
+    @media print {
+        #slide-out {
+            display: none;
+        }
+
+        body {
+            padding-left: 0 ! important;
+        }
+    }
+
+    .sidenav .collapsible-body a {
+        font-weight: normal !important;
+    }
+
+    #sections ul {
+        padding-left: 1rem;
+    }
+</style>
+
+
+{% assign logo = site.logo %}
+
+<!-- Workout distinct sidenav sections -->
+{% assign sections = '' | split: '' %}
+{% for page in site.pages %}
+{% for section in page.sections %}
+{% assign sections = sections | push: section %}
+{% endfor %}
+{% endfor %}
+{% assign sections = sections | uniq | sort %}
+
+<!-- Workout sidenav sections headings-->
+{% assign sectionsHeadings = '' | split: '' %}
+{% for section in sections %}
+{% assign sectionsHeadings = sectionsHeadings | push: site.sections[section] %}
+{% endfor %}
+
+<!-- Iterate through headings -->
+{% assign numberOfHeadings = sectionsHeadings | size | minus: 1 %}
+
+
+<!-- Main navigation -->
+<ul id="slide-out" class="nav sidenav sidenav-fixed">
+    <li class="logo">
+        <a href="/" id="logo-container" style="display: inline-block; width: 100%; text-align: center; height: 100%"
+            href="/" class="brand-logo">
+            <img id="front-page-logo" class="{{logo.class}}"
+                style="display: inline-block; padding: 1rem 0; max-width: 100%; {{logo.style}}" src="{{logo.url}}">
+        </a>
+    </li>
+
+    <li class="logo" style="text-align: center">
+        <h1 style="font-size: 2rem; margin: 1rem 0">{{site.title}}</h1>
+        <h3 style="font-size: 1.2rem; margin: 0">{{site.author}}</h3>
+        <a href="mailto:{{site.email}}">{{site.email}}</a>
+    </li>
+
+    <li>
+        <div style="position: relative">
+            <input placeholder="Browse projects" style="line-height: 1rem; padding: 0 2rem">
+            <i class="fa fa-search" style="position: absolute; right: 1rem; top: 1.2rem"></i>
+        </div>
+    </li>
+
+    <li id="sections" class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            {% include sidenav-items.html items=site.sidenav.items %}
+        </ul>
+    </li>
+
+    <!--
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            {% for i in (0..numberOfHeadings) %}
+            <li>
+                <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+                    {{ sectionsHeadings[i] }}
+                </a>
+                <div class="collapsible-body">
+                <ul>
+                    {% for node in site.pages %}
+                    {% if node.sections contains sections[i] %}
+                    <li class="{% if node.url == page.url %}active{% endif %}">
+                        <a href="{{node.url}}">{{node.title}}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+-->
+</ul>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // initialize sidenav behaviour
+        const sidenavOptions = {};
+        const sidenav = document.querySelector('.sidenav');
+        M.Sidenav.init(sidenav, sidenavOptions);
+
+        // initialize collapsible behaviour
+        const collapsibleOptions = {};
+        const collapsibles = document.querySelectorAll('.collapsible');
+        M.Collapsible.init(collapsibles, collapsibleOptions);
+    });
+</script>

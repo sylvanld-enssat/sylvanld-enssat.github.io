@@ -1,0 +1,20 @@
+@startuml
+
+title L'hôte de la session ouvre les votes pour une feature
+
+participant Host
+collections Clients
+
+== Envoie la demande de vote aux clients ==
+Host->Clients: [broadcast] FEATURE_VOTE_REQUEST(feature)
+
+== Réponse (vote) d'un client ==
+Clients->Host: [TCP] FEATURE_VOTE_REPLY(vote)
+Host-->Clients: [TCP] VEATURE_VOTE_REPLY(feature)
+note left Clients: affiche la vue "WAIT_OTHER_PARTICIPANTS"
+
+== Réponse (vote) d'un client ==
+Clients->Host: [TCP] FEATURE_VOTE_REPLY(vote)
+Host-->Clients: [TCP] VEATURE_VOTE_REPLY(feature)
+note left Clients: affiche la vue "WAIT_OTHER_PARTICIPANTS"
+@enduml
