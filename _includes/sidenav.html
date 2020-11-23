@@ -1,14 +1,4 @@
 <style>
-    body {
-        padding-left: 300px !important;
-    }
-
-    @media only screen and (max-width : 992px) {
-        body {
-            padding-left: 0 ! important;
-        }
-    }
-
     @media print {
         #slide-out {
             display: none;
@@ -18,18 +8,14 @@
             padding-left: 0 ! important;
         }
     }
-
-    .sidenav .collapsible-body a {
-        font-weight: normal !important;
-    }
-
-    #sections ul {
-        padding-left: 1rem;
-    }
 </style>
 
-
-{% assign logo = site.logo %}
+<!-- Palette background color-->
+{% if site.sidenav.palette.background %}
+{% assign sidenav_background_color = site.sidenav.palette.background %}
+{% else %}
+{% assign sidenav_background_color = 'blue' %}
+{% endif %}
 
 <!-- Workout distinct sidenav sections -->
 {% assign sections = '' | split: '' %}
@@ -51,25 +37,30 @@
 
 
 <!-- Main navigation -->
-<ul id="slide-out" class="nav sidenav sidenav-fixed">
-    <li class="logo">
-        <a href="/" id="logo-container" style="display: inline-block; width: 100%; text-align: center; height: 100%"
-            href="/" class="brand-logo">
-            <img id="front-page-logo" class="{{logo.class}}"
-                style="display: inline-block; padding: 1rem 0; max-width: 100%; {{logo.style}}" src="{{logo.url}}">
+<ul id="slide-out" class="nav sidenav sidenav-fixed {{site.palette.primary}} darken-4">
+    {% if site.profile %}
+    <li>
+        <a href="/" style="display: inline-block; width: 100%; text-align: center; height: 100%" href="/">
+            <img class="circle" style="display: inline-block; padding: 0.5rem 0; max-width: 8rem"
+                src="{{site.profile}}">
         </a>
     </li>
+    {% endif %}
 
-    <li class="logo" style="text-align: center">
-        <h1 style="font-size: 2rem; margin: 1rem 0">{{site.title}}</h1>
-        <h3 style="font-size: 1.2rem; margin: 0">{{site.author}}</h3>
-        <a href="mailto:{{site.email}}">{{site.email}}</a>
+    <li style="text-align: center">
+        <h1 style="font-size: 2rem; margin: 0 0 1rem 0" class="{{site.palette.secondary}}-text text-lighten-2">
+            {{site.title}}</h1>
+        <h3 style="font-size: 1.2rem; margin: 0" class="{{site.palette.secondary}}-text text-lighten-1">{{site.author}}
+        </h3>
+        <a href="mailto:{{site.email}}" class="{{site.palette.secondary}}-text text-darken">{{site.email}}</a>
     </li>
 
     <li>
         <div style="position: relative">
-            <input placeholder="Browse projects" style="line-height: 1rem; padding: 0 2rem">
-            <i class="fa fa-search" style="position: absolute; right: 1rem; top: 1.2rem"></i>
+            <input placeholder="Browse projects" class="{{site.palette.accent}}-text text-lighten-2"
+                style="line-height: 1rem; padding: 0 2rem">
+            <i class="fa fa-search {{site.palette.accent}}-text text-lighten-2"
+                style="position: absolute; right: 1rem; top: 1.2rem"></i>
         </div>
     </li>
 
@@ -78,30 +69,6 @@
             {% include sidenav-items.html items=site.sidenav.items %}
         </ul>
     </li>
-
-    <!--
-    <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-            {% for i in (0..numberOfHeadings) %}
-            <li>
-                <a class="collapsible-header waves-effect waves-teal" tabindex="0">
-                    {{ sectionsHeadings[i] }}
-                </a>
-                <div class="collapsible-body">
-                <ul>
-                    {% for node in site.pages %}
-                    {% if node.sections contains sections[i] %}
-                    <li class="{% if node.url == page.url %}active{% endif %}">
-                        <a href="{{node.url}}">{{node.title}}</a>
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    </li>
--->
 </ul>
 
 

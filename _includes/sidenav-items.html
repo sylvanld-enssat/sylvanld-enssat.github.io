@@ -1,12 +1,12 @@
-
 {% for item in include.items %}
 <li>
     {% if item.items or item.section %}
-    <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+    <a class="collapsible-header waves-effect waves-teal {{site.palette.primary}} darken-4 {{site.palette.secondary}}-text"
+        tabindex="0">
         {{item.title}}
     </a>
     <div class="collapsible-body">
-        <ul class="collapsible collapsible-accordion">
+        <ul class="collapsible collapsible-accordion {{site.palette.primary}} darken-4 {{site.palette.secondary}}-text">
             <!-- Display child items the same way-->
             {% if item.items %}
             {% include sidenav-items.html items=item.items %}
@@ -16,16 +16,22 @@
             {% if item.section %}
             {% for node in site.pages %}
             {% if node.sections contains item.section %}
-            <li>
-                <a href="{{node.url}}">{{node.title}}</a>
+            {% if page.url == node.url %}
+            <li class="{{site.palette.primary}}">
+                <a class="{{site.palette.accent}}" href="{{node.url}}">{{node.title}}</a>
             </li>
+            {% else %}
+            <li>
+                <a class="{{site.palette.secondary}}-text" href="{{node.url}}">{{node.title}}</a>
+            </li>
+            {% endif %}
             {% endif %}
             {% endfor %}
             {% endif %}
         </ul>
     </div>
     {% else %}
-    <a href="{{item.link}}">
+    <a href=" {{item.link}}" class="{{site.palette.primary}} darken-4 {{site.palette.secondary}}-text text-darken-2">
         {{item.title}}
     </a>
     {% endif %}
