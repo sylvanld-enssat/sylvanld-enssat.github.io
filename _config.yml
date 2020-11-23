@@ -1,9 +1,6 @@
 
 title: Projets scolaires
-logo:
-  url: /assets/profile.jpg
-  class: circle
-  style: "width: 10rem"
+profile: /assets/img/profile.jpg
 
 subtitle: Projets 2017-2020
 email: sledeunf@gmail.com
@@ -15,9 +12,13 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sylvanld-enssat.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
-
+palette:
+  primary: grey
+  secondary: light-blue
+  accent: red
+    
 # define section available in sidenav
-sidenav:
+sidenav: 
   items:
     - title: Qui suis-je?
       link: /
