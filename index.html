@@ -6,28 +6,30 @@ layout: default
     #cover {
         width: 100%;
         height: 15rem;
-        background: url('/assets/img/lake.jpg');
+        background: url('/assets/img/mountain.jpg');
         background-size: cover;
         position: relative;
-    }
-
-    .profile {
-        position: absolute;
-        max-width: 10rem;
-        right: 0;
-        margin: 2.5rem;
     }
 
     main {
         display: flex;
         padding: 5rem;
     }
+
+    .social-networks {
+        justify-content: center;
+        bottom: -5rem;
+        position: absolute;
+        background: transparent;
+    }
+
+    .social-networks>a {
+        margin: 0.5rem
+    }
 </style>
 
-<div id="cover"></div>
-
-<main>
-    <aside style="display: flex; flex-direction: column;">
+<div id="cover">
+    <div class="social-networks" style="display: flex">
         <a href="https://www.linkedin.com/in/sylvan-le-deunff/"
             class="btn-floating pulse btn-large z-depth-5 blue darken-3" target="linkedin">
             <i class="fab fa-linkedin"></i>
@@ -66,7 +68,11 @@ layout: default
         <a class="btn-floating pulse btn-large z-depth-5 blue">
             <i class="fab fa-docker"></i>
         </a>
-    </aside>
+        </nav>
+    </div>
+</div>
+
+<main>
     <div style="padding-left: 3em">
         <h1 style="margin-top:0">Sylvan Le Deunff</h1>
         <h3>Software and network engineer.</h3>
